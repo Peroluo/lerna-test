@@ -19,12 +19,14 @@ jobs:
           node-version: 12
           registry-url: https://registry.npmjs.org/
           fetch-depth: "0"
-            - name: Fetch
-      # see https://github.com/lerna/lerna/issues/2542
-    - name: Pulling
-      - run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
-      - run: git pull
-      - run: npm i
-      - run: lerna publish --yes --message 'chore(release)'
+      - name: Fetch
+        # see https://github.com/lerna/lerna/issues/2542
+        run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
+      - name: Pulling
+        run: git pull
+      - name: Install dependencies
+        run: npm i
+      - name: Publish with Lerna
+        run: lerna publish --yes --message 'chore(release)'
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_SECRET}}
