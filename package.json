@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "pub": "lerna publish --force-publish=*"
+    "release": "lerna publish --force-publish=*"
   },
   "repository": {
     "type": "git",
