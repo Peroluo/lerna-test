@@ -21,6 +21,6 @@ jobs:
           fetch-depth: "0"
       - run: npm i
       - run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
-      - run: lerna publish from-git --no-verify-access
+      - run: lerna publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_SECRET}}
