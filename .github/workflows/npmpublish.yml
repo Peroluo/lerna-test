@@ -20,6 +20,6 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
       - run: npm i
-      - run: lerna publish from-package --yes --no-verify-access
+      - run: lerna publish from-git --no-verify-access
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_SECRET}}
