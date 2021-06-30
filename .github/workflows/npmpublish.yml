@@ -19,6 +19,6 @@ jobs:
           node-version: 12
           registry-url: https://registry.npmjs.org/
       - run: npm i
-      - run: lerna publish from-package --yes
+      - run: lerna publish from-package --yes --no-verify-access
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_SECRET}}
