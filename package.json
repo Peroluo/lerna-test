@@ -1,11 +1,8 @@
 {
   "name": "lerna-test-packages",
-  "private": true,
-  "version": "1.0.0",
+  "private": false,
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "lerna:publish": "lerna publish from-package --yes"
   },
   "repository": {
