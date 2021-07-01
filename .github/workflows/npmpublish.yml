@@ -21,7 +21,7 @@ jobs:
           NPM_TOKEN: ${{secrets.NPM_SECRET}}
       - name: Build
         run: |
-           npm deploy:tags
-           npm deploy:lerna
+           npm run deploy:tags
+           npm run deploy:lerna
         env:
           NPM_TOKEN: ${{secrets.NPM_SECRET}}
