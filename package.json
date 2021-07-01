@@ -1,27 +1,25 @@
 {
-  "name": "lerna-test-packages",
-  "private": true,
-  "description": "",
-  "workspaces": {
-    "packages": [
-      "packages/*"
-    ]
+  "name": "lerna-travis",
+  "devDependencies": {
+    "@semantic-release/git": "^3.0.1",
+    "lerna": "^2.0.0-rc.4",
+    "semantic-release": "^15.0.0"
   },
+  "version": "1.0.1-0",
   "scripts": {
-    "prestart": "yarn",
-    "publish:release": "lerna publish from-package --dist-tag next"
+    "semantic-release": "semantic-release"
   },
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Peroluo/lerna-test.git"
+    "type": "git"
   },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Peroluo/lerna-test/issues"
-  },
-  "homepage": "https://github.com/Peroluo/lerna-test#readme",
-  "devDependencies": {
-    "lerna": "^3.4.3"
+  "release": {
+    "publish": [
+      {
+        "path": "@semantic-release/npm",
+        "npmPublish": false
+      },
+      "@semantic-release/git",
+      "@semantic-release/github"
+    ]
   }
 }
