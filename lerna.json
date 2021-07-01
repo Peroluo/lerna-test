@@ -1,6 +1,6 @@
 {
     "packages": ["packages/*"],
-    "version": "independent",
+    "version": "v3.0.1",
     "useWorkspaces": true,
     "command": {
       "publish": {
