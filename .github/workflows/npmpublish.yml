@@ -16,13 +16,12 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       - name: Install packages
-        run: sudo yarn --frozen-lockfile
+        run: npm i
         env:
           NPM_TOKEN: ${{secrets.NPM_SECRET}}
       - name: Build
         run: |
-          sudo yarn deploy:tags
-          sudo yarn deploy:lerna
-          echo "Skipping automated deploy..."
+           npm deploy:tags
+           npm deploy:lerna
         env:
           NPM_TOKEN: ${{secrets.NPM_SECRET}}
