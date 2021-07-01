@@ -23,3 +23,5 @@ jobs:
           sudo yarn deploy:tags
           sudo yarn deploy:lerna
           echo "Skipping automated deploy..."
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_SECRET}}
