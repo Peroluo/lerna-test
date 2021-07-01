@@ -20,10 +20,11 @@ jobs:
       with:
         node-version: 12
         registry-url: https://registry.npmjs.org/
-    - name: Publish to registry
-      env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-      run: |
+        fetch-depth: 0
+    - run: git fetch --prune
+    - run: |
         echo //registry.npmjs.org/:_authToken=${NPM_TOKEN} > .npmrc
         npm i
         npm run lerna:publish
+      env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
