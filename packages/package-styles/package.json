@@ -1,6 +1,6 @@
 {
   "name": "package-styles-01",
-  "version": "0.11.1",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -8,5 +8,5 @@
   },
   "author": "",
   "license": "ISC",
-  "gitHead": "e25bbd44ddd307499ad03b20ffa5184b2c768c9d"
+  "gitHead": "c92783754cf8201d1b69c1287e9e3ea608f96ee6"
 }
