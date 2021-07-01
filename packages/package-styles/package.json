@@ -1,5 +1,5 @@
 {
-  "name": "package-styles",
+  "name": "package-styles-01",
   "version": "0.11.0",
   "description": "",
   "main": "index.js",
@@ -8,5 +8,5 @@
   },
   "author": "",
   "license": "ISC",
-  "gitHead": "b802d2713944bbbcdee15ae10a82fc77924e4aad"
+  "gitHead": "e25bbd44ddd307499ad03b20ffa5184b2c768c9d"
 }
