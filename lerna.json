@@ -4,7 +4,7 @@
   ],
     "command": {
         "publish": {
-            "npmClient": "npm",
+            "npmClient": "npm"
         }
     },
   "version": "3.7.0"
