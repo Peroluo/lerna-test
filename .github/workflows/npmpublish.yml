@@ -29,9 +29,16 @@ jobs:
         run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
       - name: Pulling
         run: git pull
+      - name: Authenticate with Registry
       - name: Install dependencies
         run: npm i
-      - name: Publish with Lerna
-        run: lerna publish --conventional-commits --yes
+        run: |
+            npm logout
+            echo "registry=http://registry.npmjs.org/" >> .npmrc
+            echo "//registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN" >> .npmrc
+            npm whoami
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_SECRET}}
+      - name: Publish with Lerna
+        run: lerna publish --conventional-commits --yes
+     
