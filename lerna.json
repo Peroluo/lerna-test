@@ -3,7 +3,10 @@
     "packages/*"
   ],
   "publish": {
-    "registry": "https://registry.npmjs.org"
+    "allowBranch": ["master"],
+    "ignoreChanges": ["ignored-file", "*.md"],
+    "message": "chore(release): publish",
+    "yes": true
   },
   "version": "0.0.3"
 }
