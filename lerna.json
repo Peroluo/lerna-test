@@ -4,7 +4,9 @@
   ],
     "command": {
         "publish": {
-            "npmClient": "npm"
+            "conventionalCommits": true,
+            "message": "chore(release): publish",
+            "allowBranch": "main"
         }
     },
   "version": "3.7.0"
