@@ -1,7 +1,8 @@
 {
     "packages": ["packages/*"],
-    "version": "v3.0.1",
+    "version": "independent",
     "npmClient": "yarn",
+    "useWorkspaces": true,
     "command": {
       "publish": {
         "conventionalCommits": true,
@@ -10,6 +11,7 @@
         "allowBranch": "main"
       },
       "version": {
+        "ignoreChanges": ["**/stories/**", "**/tests/**", "**/*.md"],
         "allowBranch": ["main"]
       }
     }

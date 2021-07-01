@@ -2,8 +2,14 @@
   "name": "lerna-test-packages",
   "private": true,
   "description": "",
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
   "scripts": {
-    "lerna:publish": "lerna publish from-package --yes"
+    "prestart": "yarn",
+    "publish:release": "lerna publish from-package --npm-tag latest",
   },
   "repository": {
     "type": "git",
