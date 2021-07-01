@@ -1,26 +1,27 @@
-# This workflow will run tests using node and then publish a package to GitHub Packages when a release is created
-# For more information see: https://help.github.com/actions/language-and-framework-guides/publishing-nodejs-packages
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: Publish-package
+name: Create Release CI
 
 on:
   push:
-    branch:
-      - 'main' # Push events to matching v*, i.e. v1.0, v20.15.10
+    branches: [main]
 
 jobs:
-
-  publish-npm:
+  version:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+        with:
+          fetch-depth: 0
+      - run: git fetch --prune
+      - name: Use Node.js 12
+        uses: actions/setup-node@v1
         with:
           node-version: 12
           registry-url: https://registry.npmjs.org/
-          fetch-depth: "0"
       - run: npm i
-      - run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
-      - run: lerna publish
+      - run: npm publish
         env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_SECRET}}
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
