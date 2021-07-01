@@ -1,7 +1,7 @@
 {
   "name": "lerna-test-packages",
   "version": "0.0.2",
-  "private": true,
+  "private": false,
   "description": "",
   "scripts": {
     "lerna:publish": "lerna publish from-package --yes"
