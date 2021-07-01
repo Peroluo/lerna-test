@@ -1,6 +1,6 @@
-35 error Error: Command failed with exit code 128: git tag v0.0.3 -m v0.0.3
-35 error fatal: tag 'v0.0.3' already exists
-35 error     at makeError (/Users/peroluo/github/lerna-test/node_modules/_execa@5.1.1@execa/lib/error.js:60:11)
-35 error     at handlePromise (/Users/peroluo/github/lerna-test/node_modules/_execa@5.1.1@execa/index.js:118:26)
-35 error     at processTicksAndRejections (internal/process/task_queues.js:95:5)
-35 error     at async Promise.all (index 0)
+42 error Error: Command failed with exit code 128: git tag v0.0.1 -m v0.0.1
+42 error fatal: tag 'v0.0.1' already exists
+42 error     at makeError (/Users/peroluo/github/lerna-test/node_modules/_execa@5.1.1@execa/lib/error.js:60:11)
+42 error     at handlePromise (/Users/peroluo/github/lerna-test/node_modules/_execa@5.1.1@execa/index.js:118:26)
+42 error     at processTicksAndRejections (internal/process/task_queues.js:95:5)
+42 error     at async Promise.all (index 0)
