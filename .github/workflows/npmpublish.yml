@@ -23,5 +23,4 @@ jobs:
           sudo yarn clean
           sudo yarn deploy:tags
           sudo yarn deploy:lerna
-          sudo yarn clean
           echo "Skipping automated deploy..."
