@@ -40,8 +40,6 @@ jobs:
           npm whoami
         env:
           NPM_TOKEN: ${{ secrets.NPM_SECRET }}
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_SECRET}}
       - name: Publish with Lerna
         run: lerna publish --conventional-commits --yes
      
