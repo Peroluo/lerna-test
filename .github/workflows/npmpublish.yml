@@ -1,45 +1,27 @@
-# This workflow will run tests using node and then publish a package to GitHub Packages when a release is created
-# For more information see: https://help.github.com/actions/language-and-framework-guides/publishing-nodejs-packages
-
-name: Publish-package
+name: Release
 
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
-
-  publish-npm:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v2-beta
         with:
-          node-version: 12
-          registry-url: https://registry.npmjs.org/
-          fetch-depth: "0"
-      - name: Git Identity
+          node-version: '15'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Install packages
+        run: sudo yarn --frozen-lockfile
+
+      - name: Build
         run: |
-          git config --global user.name 'pero'
-          git config --global user.email '1025558554@qq.com'
-          git remote set-url origin https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY
-      - name: Fetch
-        # see https://github.com/lerna/lerna/issues/2542
-        run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
-      - name: Pulling
-        run: git pull
-      - name: Install dependencies
-        run: npm i
-      - name: Authenticate with Registry
-        run: |
-          yarn logout
-          echo "@apollo-elements:registry=http://registry.npmjs.org/" > .npmrc
-          echo "registry=http://registry.npmjs.org/" >> .npmrc
-          echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> .npmrc
-          npm whoami
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_SECRET }}
-      - name: Publish with Lerna
-        run: lerna publish --conventional-commits --yes
-     
+          sudo yarn clean
+          sudo yarn deploy:tags
+          sudo yarn deploy:lerna
+          sudo yarn clean
+          echo "Skipping automated deploy..."
