@@ -1,28 +1,27 @@
-name: Release
+# This is a workflow for publish package via lerna to npm
+name: lerna-publish
 
 on:
+  pull_request:
+    branches:
+      - master
   push:
     branches:
       - main
+    tags:
+      - v*
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2-beta
-        with:
-          node-version: '15'
-          registry-url: 'https://registry.npmjs.org'
-      - name: token
-        run: npm config set //registry.npmjs.org/:_authToken=${NPM_TOKEN}
-        env:
-          NPM_TOKEN: ${{secrets.NPM_SECRET}}
-      - name: Install packages
-        run: npm i
-        env:
-          NPM_TOKEN: ${{secrets.NPM_SECRET}}
-      - name: Build
-        run: |
-           npm run deploy:tags
-           npm run deploy:lerna
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
+      with:
+        node-version: 12
+        registry-url: https://registry.npmjs.org/
+    - run: |
+        npm i
+        npm run lerna:publish
+      env:
+        NODE_AUTH_TOKEN: ${{secrets.NPM_SECRET}}
