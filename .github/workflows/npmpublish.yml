@@ -17,6 +17,8 @@ jobs:
 
       - name: Install packages
         run: sudo yarn --frozen-lockfile
+        env:
+          NPM_TOKEN: ${{secrets.NPM_SECRET}}
       - name: Build
         run: |
           sudo yarn deploy:tags
