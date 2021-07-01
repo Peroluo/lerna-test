@@ -3,7 +3,7 @@
   "private": true,
   "description": "",
   "scripts": {
-    "lerna:publish": "lerna publish from-package --yes"
+    "lerna:publish": "lerna publish from-package --yes --no-verify-access"
   },
   "repository": {
     "type": "git",
