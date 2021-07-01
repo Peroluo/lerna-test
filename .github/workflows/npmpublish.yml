@@ -16,6 +16,8 @@ jobs:
         with:
           fetch-depth: 0
       - run: git fetch --prune
+      - run: git config --global user.email "1025558554@qq.com"
+      - run: git config --global user.name "Peroluo"
       - name: Use Node.js 12
         uses: actions/setup-node@v1
         with:
