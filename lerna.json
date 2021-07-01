@@ -2,11 +2,5 @@
   "packages": [
     "packages/*"
   ],
-  "command": {
-    "publish": {
-      "access": "public",
-      "registry": "https://registry.npmjs.org/"
-    }
-  },
   "version": "3.7.0"
 }
