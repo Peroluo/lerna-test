@@ -27,6 +27,6 @@ jobs:
       - name: Install dependencies
         run: npm i
       - name: Publish with Lerna
-        run: lerna publish --force-publish=*
+        run: lerna publish --conventional-commits --yes
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_SECRET}}
