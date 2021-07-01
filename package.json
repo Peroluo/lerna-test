@@ -9,7 +9,7 @@
   },
   "scripts": {
     "prestart": "yarn",
-    "publish:release": "lerna publish from-package --no-verify-access --npm-tag latest"
+    "publish:release": "lerna publish from-package --npm-tag latest"
   },
   "repository": {
     "type": "git",
