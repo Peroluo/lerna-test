@@ -14,7 +14,10 @@ jobs:
         with:
           node-version: '15'
           registry-url: 'https://registry.npmjs.org'
-
+      - name: token
+        run: npm config set //registry.npmjs.org/:_authToken=${NPM_TOKEN}
+        env:
+          NPM_TOKEN: ${{secrets.NPM_SECRET}}
       - name: Install packages
         run: npm i
         env:
@@ -23,5 +26,3 @@ jobs:
         run: |
            npm run deploy:tags
            npm run deploy:lerna
-        env:
-          NPM_TOKEN: ${{secrets.NPM_SECRET}}
