@@ -24,6 +24,6 @@ jobs:
       env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       run: |
-        npm i
         echo //registry.npmjs.org/:_authToken=${NPM_TOKEN} > .npmrc
+        npm i
         npm run lerna:publish
