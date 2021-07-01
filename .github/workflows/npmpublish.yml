@@ -1,21 +1,17 @@
-# This is a workflow for publish package via lerna to npm
-name: lerna-publish
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Create Release CI
 
 on:
-  pull_request:
-    branches:
-      - master
   push:
-    branches:
-      - main
-    tags:
-      - v*
+    branches: [main]
 
 jobs:
-  build:
+  version:
     runs-on: ubuntu-latest
 
-     steps:
+    steps:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
@@ -25,7 +21,7 @@ jobs:
         with:
           node-version: 12
           registry-url: https://registry.npmjs.org/
-      - run: yarn i
+      - run: yarn add
       - run: yarn lerna:publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
