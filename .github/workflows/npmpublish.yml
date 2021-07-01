@@ -20,7 +20,6 @@ jobs:
 
       - name: Build
         run: |
-          sudo yarn clean
           sudo yarn deploy:tags
           sudo yarn deploy:lerna
           echo "Skipping automated deploy..."
