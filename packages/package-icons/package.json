@@ -1,5 +1,5 @@
 {
-  "name": "@m/package-icons22",
+  "name": "package-icons",
   "version": "0.9.0",
   "description": "",
   "main": "index.js",
@@ -7,5 +7,6 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "gitHead": "d779d132d2a4e8e200f81cae7df69b51323cc66b"
 }
