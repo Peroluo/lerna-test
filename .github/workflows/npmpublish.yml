@@ -27,6 +27,6 @@ jobs:
       - name: Install dependencies
         run: npm i
       - name: Publish with Lerna
-        run: lerna publish --yes --message 'chore(release)'
+        run: lerna publish --yes
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_SECRET}}
