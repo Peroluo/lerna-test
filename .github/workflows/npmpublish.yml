@@ -19,6 +19,11 @@ jobs:
           node-version: 12
           registry-url: https://registry.npmjs.org/
           fetch-depth: "0"
+      - name: Git Identity
+        run: |
+          git config --global user.name 'pero'
+          git config --global user.email '1025558554@qq.com'
+          git remote set-url origin https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY
       - name: Fetch
         # see https://github.com/lerna/lerna/issues/2542
         run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
