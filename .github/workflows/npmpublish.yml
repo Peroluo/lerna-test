@@ -33,10 +33,13 @@ jobs:
         run: npm i
       - name: Authenticate with Registry
         run: |
-            npm logout
-            echo "registry=http://registry.npmjs.org/" >> .npmrc
-            echo "//registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN" >> .npmrc
-            npm whoami
+          yarn logout
+          echo "@apollo-elements:registry=http://registry.npmjs.org/" > .npmrc
+          echo "registry=http://registry.npmjs.org/" >> .npmrc
+          echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> .npmrc
+          npm whoami
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_SECRET }}
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_SECRET}}
       - name: Publish with Lerna
