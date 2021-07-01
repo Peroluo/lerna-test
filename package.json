@@ -7,7 +7,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "deploy:lerna": "lerna version minor --yes && lerna publish --canary --yes from-git --force-publish=* --no-verify-access --no-verify-registry",
-    "deploy:tags": "git pull --tags"
+    "deploy:tags": "git pull --tags",
+    "pub":"lerna publish"
   },
   "repository": {
     "type": "git",

@@ -1,6 +1,6 @@
 {
   "name": "package-icons-01",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -8,5 +8,5 @@
   },
   "author": "",
   "license": "ISC",
-  "gitHead": "c43aec3b95f380c3d8d0c6b38af47e398228cf00"
+  "gitHead": "f907640a777aada56dbdaa40603424245d987c3f"
 }
