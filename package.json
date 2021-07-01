@@ -1,7 +1,5 @@
-
 {
     "name": "lerna-test-packages",
-    "version": "0.0.2",
     "private": true,
     "description": "",
     "scripts": {

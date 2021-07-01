@@ -1,15 +1,13 @@
 {
-    "packages": ["packages/*"],
-    "version": "v3.0.1",
-    "command": {
-      "publish": {
-        "conventionalCommits": true,
-        "message": "chore(release): publish",
-        "ignoreChanges": ["**/stories/**", "**/tests/**", "**/*.md"],
-        "allowBranch": "main"
+    "packages": [
+      "packages/*"
+    ],
+      "command": {
+          "publish": {
+              "conventionalCommits": true,
+              "message": "chore(release): publish",
+              "allowBranch": "main"
+          }
       },
-      "version": {
-        "allowBranch": ["main"]
-      }
-    }
+    "version": "3.7.0"
   }
