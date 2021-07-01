@@ -17,13 +17,10 @@ jobs:
 
       - name: Install packages
         run: sudo yarn --frozen-lockfile
-      - name: Authenticate with Registry
-        run: |
-          npm config set '//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}'
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_SECRET}}
       - name: Build
         run: |
           sudo yarn deploy:tags
           sudo yarn deploy:lerna
           echo "Skipping automated deploy..."
+        env:
+          NPM_TOKEN: ${{secrets.NPM_SECRET}}
