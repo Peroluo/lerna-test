@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy:lerna": "lerna version minor --yes && lerna publish --canary --yes from-git --force-publish=*",
+    "deploy:lerna": "lerna version minor --yes && lerna publish --canary --yes --force-publish=*",
     "deploy:tags": "git fetch --tags",
     "pub":"lerna publish"
   },
