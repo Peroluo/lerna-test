@@ -1,21 +1,21 @@
 {
-    "name": "lerna-test-packages",
-    "private": true,
-    "description": "",
-    "scripts": {
-      "lerna:publish": "lerna publish from-package --yes"
-    },
-    "repository": {
-      "type": "git",
-      "url": "git+https://github.com/Peroluo/lerna-test.git"
-    },
-    "author": "",
-    "license": "ISC",
-    "bugs": {
-      "url": "https://github.com/Peroluo/lerna-test/issues"
-    },
-    "homepage": "https://github.com/Peroluo/lerna-test#readme",
-    "devDependencies": {
-      "lerna": "^3.4.3"
-    }
+  "name": "lerna-test-packages",
+  "private": true,
+  "description": "",
+  "scripts": {
+    "lerna:publish": "lerna publish from-package --yes"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Peroluo/lerna-test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Peroluo/lerna-test/issues"
+  },
+  "homepage": "https://github.com/Peroluo/lerna-test#readme",
+  "devDependencies": {
+    "lerna": "^3.4.3"
   }
+}
