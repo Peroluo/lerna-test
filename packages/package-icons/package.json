@@ -1,6 +1,6 @@
 {
-  "name": "package-icons",
-  "version": "0.0.5",
+  "name": "pe-package-icons",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {

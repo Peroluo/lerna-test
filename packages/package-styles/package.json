@@ -1,6 +1,6 @@
 {
-  "name": "package-styles",
-  "version": "0.0.5",
+  "name": "pe-package-styles",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
