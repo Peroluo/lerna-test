@@ -13,9 +13,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      #   with:
-      #     fetch-depth: 0
-      # - run: git fetch --prune
+        with:
+          fetch-depth: 0
+      - run: git fetch --prune
       - name: Use Node.js 12
         uses: actions/setup-node@v1
         with:
