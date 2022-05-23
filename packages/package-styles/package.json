@@ -1,10 +1,19 @@
 {
   "name": "pe-package-styles",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Peroluo/lerna-test.git",
+    "directory": "packages/package-styles"
+  },
+  "devDependencies": {
+    "typescript": "^4.6.4"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc"
   },
   "author": "",
   "license": "ISC"
