@@ -1,6 +1,6 @@
 {
   "name": "pe-package-icons",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "",
   "main": "./dist/index.js",
   "types": "./dist/index.d.js",
@@ -9,8 +9,9 @@
     "url": "git+https://github.com/Peroluo/lerna-test.git",
     "directory": "packages/package-icons"
   },
+  "homepage": "",
   "dependencies": {
-    "pe-package-styles": "0.0.2"
+    "pe-package-styles": "0.0.3"
   },
   "devDependencies": {
     "typescript": "^4.6.4"
