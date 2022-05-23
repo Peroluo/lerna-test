@@ -1,7 +1,13 @@
 {
-    "npmClient": "cnpm",
-    "version": "independent",
     "packages": [
       "packages/*"
-    ]
+    ],
+      "command": {
+          "publish": {
+              "conventionalCommits": true,
+              "message": "chore(release): publish",
+              "allowBranch": "main"
+          }
+      },
+      "version": "independent"
   }
